@@ -10,9 +10,15 @@ import java.util.List;
 @Repository
 public class MovieRepository {
 
-    HashMap<String, Movie>movieMap;
-    HashMap<String, Director>directorMap;
-    HashMap<String, List<String>>directorMovieMapping;
+    private HashMap<String, Movie>movieMap;
+    private HashMap<String, Director>directorMap;
+    private HashMap<String, List<String>>directorMovieMapping;
+
+    public MovieRepository(){
+        this.movieMap = new HashMap<String, Movie>();
+        this.directorMap = new HashMap<String, Director>();
+        this.directorMovieMapping = new HashMap<String, List<String>>();
+    }
 
     public void addMovie(Movie movie){
         movieMap.put(movie.getName(), movie);
